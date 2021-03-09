@@ -125,3 +125,39 @@ const Home = () => {
   )
 }
 ```
+
+
+### Custom Document
+
+If you look at the source code, you can see our head tag, body tag and ..., But we don't have that anywhere in our file structure though by default, and bunch of script tags, including webpack and so on, and if you wanna access to them, like so if you wanna add, a `lang` attribute to the `html` tag, what you can do, is to create a `Custom Document`, and I'm going to bring this documentation page over.
+
+A custom Document is commonly used to augment your application's <html> and <body> tags. This is necessary because Next.js pages skip the definition of the surrounding document's markup.
+  
+To override the default Document, create the file ./pages/_document.js and extend the Document class as shown below:
+
+```js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+The code above is the default Document added by Next.js. Feel free to remove the getInitialProps or render function from MyDocument if you don't need to change them.
