@@ -45,3 +45,29 @@ export default About;
 ```
 
 now if we go to `/about` route we will see the `About` page 
+
+
+### Head
+
+`$. import Head from 'next/head'`
+
+this is used when we wanna have `custom titles`, or `meta tags`, maybe `keywords` or `description`
+
+**index.js**
+
+```js
+import Head from 'next/head'
+
+const Home = () => {
+  return (
+    <div>
+      <Head>
+        <title>Web Dev Newz</title>
+        <meta name='keywords' content='web development, programming' />
+      </Head>
+      
+      <h1>Welcome to Next</h1>
+    </div>
+  )
+}
+```
