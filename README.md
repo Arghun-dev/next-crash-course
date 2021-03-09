@@ -98,3 +98,30 @@ export default About;
 this wraps around all of your page component, it's a function, it takes a `Compoenent` which is your page component and it takes `pageProps`.
 
 And if you wanna create components which is not pages, create a folder called `components` and inside that you can make your components.
+
+
+### Styles Jsx
+
+```js
+import Head from 'react/head'
+
+const Home = () => {
+  const x = 5;
+  return (
+    <div>
+      <Head>
+        <title>HomePage</title>
+        <meta name='keywords' content='webDev, programming' />
+      </Head>
+      
+      <h1 className='title'>WebDev Newz</h1>
+      
+      <style jsx>
+        {`
+          .title: ${x > 5 ? 'red' : 'blue'}
+        `}
+      </style>
+    </div>
+  )
+}
+```
