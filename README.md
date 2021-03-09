@@ -146,7 +146,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head />
         <body>
           <Main />
@@ -161,3 +161,48 @@ export default MyDocument
 ```
 
 The code above is the default Document added by Next.js. Feel free to remove the getInitialProps or render function from MyDocument if you don't need to change them.
+
+
+### Data Fetching
+
+We have some special functions that we can use to fetch data and pass it in to our page as `props`, so we're going to go to `index.js` component.
+
+there are `3` separate methods that we can use, to fetch data, 
+
+1. `getStaticProps` which is going to allow us to fetch it `build time`
+2. `getServerSideProps` where we would fetch the data on every request which is a little slower obviously.
+3. `getStaticPaths` to dynamically generate paths, based on the data we're fetching
+
+
+Here, we're gonna use `getStaticProps`, after that I'm going to show you, how we can create our own api routes, in the `api` folder
+
+**index.js**
+
+```js
+import Head from 'next/head'
+
+const Home = ({ articles }) => {
+  return (
+    <div>
+      <Head>
+        <title>WebDev News</title>
+        <meta name='keywords' content='web developing bootcamp' />
+      </Head>
+      
+      <h1>Welcome to Next</h1>
+      {articles.map(article => <h1>{article.title}</h1>)}
+    </div>
+  )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+  const articles = await res.json()
+  
+  return {
+    props: {
+      articles
+    }
+  }
+}
+```
