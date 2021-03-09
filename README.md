@@ -92,3 +92,9 @@ const About = () => {
 
 export default About;
 ```
+
+**_app.js**
+
+this wraps around all of your page component, it's a function, it takes a `Compoenent` which is your page component and it takes `pageProps`.
+
+And if you wanna create components which is not pages, create a folder called `components` and inside that you can make your components.
