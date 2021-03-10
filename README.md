@@ -219,12 +219,18 @@ and it's gonna be a react component
 **pages/article/[id]/index.js**
 
 ```js
-const index = () => {
+import {useRouter} from 'next/router'
+
+const article = () => {
+  const router = useRouter()
+  const { id } = router.query
+  
   return (
     <div>
+      This is article {id}
     </div>
   )
 }
 
-export default index
+export default article
 ```
