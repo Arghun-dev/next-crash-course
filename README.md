@@ -6,7 +6,7 @@ Installation
 
 Next.js is a wrapper to React, which enables React code to pre-render and render on the server.
 
-### Why Next.js
+## Initialization of Next.js
 
 1. `Pre-rendering:` Statically generated and server rendered, React applications have never been easier.
 2. `Static Exporting:` No need to learn a new framework. Exporting a static site with Next.js is as easy as a single command.
@@ -34,7 +34,17 @@ so if you run `$. npm run dev`, you will see that, it says **We detected Typescr
 
 That was initialization of Next.js with typescript
 
-`---------------------------------------------------------------------------------------------------------------------------------------------`
+`------------------------------------------------------------------------------------------------------------------------------------`
+
+## File Structure Explanation
+
+`puclic:` what you put in this file, it's going to be accessible on your `root` domain.
+`pages:` this is where our source code would live.
+`styles:` You can have your styles in this folder, or you can copy and paste your `styles` files into `pages` folder.
+
+Now we have **2 folder:** `public` and `pages`, and the second one is `puclic` which public folder includes `static files`, and the `pages` folder for your source code
+
+But the idead is, you `must` have 2 folders the first one is
 
 You will see an `index.js` file which is our `HomePage`
 
