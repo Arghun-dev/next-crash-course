@@ -32,6 +32,9 @@ this will go to the package.json and it will see and run `next dev`, and `next d
 
 so if you run `$. npm run dev`, you will see that, it says **We detected Typescript in your project and created a tsconfig.json file for you.**
 
+That was initialization of Next.js with typescript
+`---------------------------------------------------------------------------------------------------------------------------------------------`
+
 You will see an `index.js` file which is our `HomePage`
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
