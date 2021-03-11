@@ -1,5 +1,16 @@
 # next-crash-course
 
+Next.js is a wrapper to React, which enables React code to pre-render and render on the server.
+
+### Why Next.js
+
+1. `Pre-rendering:` Statically generated and server rendered, React applications have never been easier.
+2. `Static Exporting:` No need to learn a new framework. Exporting a static site with Next.js is as easy as a single command.
+3. `Zero Configuration:` Automatic code splitting, file system, base Routing, hot code reloading, and universal rendering.
+4. `Fully Extensible:` Complete Control over Babel and Webpack. Customizable Server, routing and next plugins.
+5. `Ready for production:` Optimized for a smaller build size, faster dev compilation, and dozens of other frameworks.
+6. `css in js:` Next.js comes with **styled-jsx** included, but it also works with every css in js solutions.
+
 Installation
 
 `$. npx create-next-app appName`
@@ -205,4 +216,32 @@ export const getStaticProps = async () => {
     }
   }
 }
+```
+
+
+### Nested Routing
+
+for example I have a Route, which shows a list of articles in this `Route`, and If I click in each article, it will open it's article in a specific `Route`.
+
+create a folder called `article` inside `pages` folder and then create a folder called `[id]` inside `article` folder and then create file called `index.js` inside `[id]` folder.
+
+and it's gonna be a react component
+
+**pages/article/[id]/index.js**
+
+```js
+import {useRouter} from 'next/router'
+
+const article = () => {
+  const router = useRouter()
+  const { id } = router.query
+  
+  return (
+    <div>
+      This is article {id}
+    </div>
+  )
+}
+
+export default article
 ```
