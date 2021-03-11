@@ -44,7 +44,9 @@ That was initialization of Next.js with typescript
 
 Now we have **2 folder:** `public` and `pages`, and the second one is `puclic` which public folder includes `static files`, and the `pages` folder for your source code
 
-But the idead is, you `must` have 2 folders the first one is
+
+## Pages in Next.js
+
 
 You will see an `index.js` file which is our `HomePage`
 
