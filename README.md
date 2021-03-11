@@ -11,6 +11,15 @@ Next.js is a wrapper to React, which enables React code to pre-render and render
 5. `Ready for production:` Optimized for a smaller build size, faster dev compilation, and dozens of other frameworks.
 6. `css in js:` Next.js comes with **styled-jsx** included, but it also works with every css in js solutions.
 
+I converted all of my files to `.ts` once you do this, you immediately notice that we do not have `tsconfig`, But the thing is **Next.js** can automatically, take care of that, how awesome is that, so I'm gonna create a file called `tsconfig.json` and I'm gonna let it empty, it would be handled with `Next.js` we don't have to mess around with it initially at least.
+
+Then I'm going to install some packages, which would enable us the `types` support, and all the nice features of `typescript`.
+
+`$. npm i typescript @types/node @types/react --save-dev`
+
+why `--save-dev`, because these are dev dependencies, and we don't need them on the production.
+
+
 Installation
 
 `$. npx create-next-app appName`
