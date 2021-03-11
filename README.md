@@ -1,5 +1,16 @@
 # next-crash-course
 
+Next.js is a wrapper to React, which enables React code to pre-render and render on the server.
+
+### Why Next.js
+
+1. `Pre-rendering:` Statically generated and server rendered, React applications have never been easier.
+2. `Static Exporting:` No need to learn a new framework. Exporting a static site with Next.js is as easy as a single command.
+3. `Zero Configuration:` Automatic code splitting, file system, base Routing, hot code reloading, and universal rendering.
+4. `Fully Extensible:` Complete Control over Babel and Webpack. Customizable Server, routing and next plugins.
+5. `Ready for production:` Optimized for a smaller build size, faster dev compilation, and dozens of other frameworks.
+6. `css in js:` Next.js comes with **styled-jsx** included, but it also works with every css in js solutions.
+
 Installation
 
 `$. npx create-next-app appName`
