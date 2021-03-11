@@ -92,7 +92,9 @@ this `_app.tsx` is actually responsible for rendering all of your `pages`, And H
 
 `Next.js`is actually passing 2 things here, the first one is `Component` and second one is `pageProps`
 
-what's really happening here, is that this code, this function is being executed both on the server obviously for server side rendering and on the client as well. with `_document.tsx` what's happening is that things really execute just on the `server`
+what's really happening here, is that this code, this function is being executed both on the server obviously for server side rendering and on the client as well. with `_document.tsx` what's happening is that things really execute just on the `server`.
+
+`_document.tsx` although it returns a react component, although agreed that it returns a reacy component, but it actually forming the page structure, the overall page structure. so that means it is only rendered on the `server` to create those `html` and `head` and those custom next.js scripts and hooking everything in nicely, but it would not execute any javascript which is available inside this page.
 
 ```js
 export default function App({ Component, pageProps }) {
