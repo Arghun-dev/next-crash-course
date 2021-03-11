@@ -33,6 +33,7 @@ this will go to the package.json and it will see and run `next dev`, and `next d
 so if you run `$. npm run dev`, you will see that, it says **We detected Typescript in your project and created a tsconfig.json file for you.**
 
 That was initialization of Next.js with typescript
+
 `---------------------------------------------------------------------------------------------------------------------------------------------`
 
 You will see an `index.js` file which is our `HomePage`
