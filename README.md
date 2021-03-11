@@ -1,5 +1,9 @@
 # next-crash-course
 
+Installation
+
+`$. npx create-next-app appName`
+
 Next.js is a wrapper to React, which enables React code to pre-render and render on the server.
 
 ### Why Next.js
@@ -19,10 +23,14 @@ Then I'm going to install some packages, which would enable us the `types` suppo
 
 why `--save-dev`, because these are dev dependencies, and we don't need them on the production.
 
+now if you look at your codes, you will notice so many errors, but don't worry, once you fill up `tsconfig.json` file, the errors will fade off. to do that:
 
-Installation
+run:
+`$. npm run dev`
 
-`$. npx create-next-app appName`
+this will go to the package.json and it will see and run `next dev`, and `next dev` is magic => it is going to take care of so initialization, and compiling your `typescript` and `hot reloading` of code and `fast refresh` and all that good stuff out of the box.
+
+so if you run `$. npm run dev`, you will see that, it says **We detected Typescript in your project and created a tsconfig.json file for you.**
 
 You will see an `index.js` file which is our `HomePage`
 
