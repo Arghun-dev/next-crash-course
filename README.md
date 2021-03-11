@@ -56,7 +56,51 @@ And notice that any file defined inside `pages` folder should return a `react co
 
 ## _document.tsx
 
-You will see an `index.js` file which is our `HomePage`
+create a file called `_document.tsx` inside `pages` folder
+
+in this file, you can add additional `meta tags` and other other properties into your html file.
+
+```js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html lang='en'>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+
+## _app.tsx
+
+this `_app.tsx` is actually responsible for rendering all of your `pages`, And How it do this?
+
+`Next.js`is actually passing 2 things here, the first one is `Component` and second one is `pageProps`
+
+what's really happening here, is that this code, this function is being executed both on the server obviously for server side rendering and on the client as well. with `_document.tsx` what's happening is that things really execute just on the `server`
+
+```js
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+
+You will see an `index.js` file which is our `HomePage` 
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
 
