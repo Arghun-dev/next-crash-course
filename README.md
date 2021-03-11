@@ -47,6 +47,14 @@ Now we have **2 folder:** `public` and `pages`, and the second one is `puclic` w
 
 ## Pages in Next.js
 
+what happens with `pages` is that whatever file, `Next.js` finds ends with `.js .jsx .ts .tsx` inside `pages` folder, it would create a `path` of that.
+
+And next.js will render all the files defined inside `pages` folder on the `server`. and this has multiple benefits, in terms of `seo` and `performance`, but the most notable benefit you can see is the client now, when the `pages` loaded, is never waiting for any sort of javascript to execute, for displaying the content, which increases performance a lot for the client side.
+
+And notice that any file defined inside `pages` folder should return a `react component` and it should export as `default export`.
+
+
+## _document.tsx
 
 You will see an `index.js` file which is our `HomePage`
 
