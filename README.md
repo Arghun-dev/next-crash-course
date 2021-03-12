@@ -138,6 +138,8 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
+We can give our Next.js app global styles, inside `_app.tsx` file we can give global styles, we create a file `global.css` and import it inside, `_app.tsx` and use it.
+
 ## CSS Modules
 
 in here, we're gonna exmplain how you can import and use component styles in your pages, for example you wanna create and import Nav.css to your `Nav.tsx` file, you should do this just like this, if you want your file to be available only to a particular component:
@@ -148,7 +150,20 @@ you should add `module` to your css file. => `Nav.module.css`
 import styles from './Nav.module.css'
 ```
 
-We can give our Next.js app global styles, inside `_app.tsx` file we can give global styles, we create a file `global.css` and import it inside, `_app.tsx` and use it.
+## Sass Modules
+
+How to use `Sass` inside Next.js?
+
+Next.js Supports Sass natively, you just need to **rename** the **css** to **scss**, and install `sass` package.
+
+
+## File Structure
+
+in here, I'm gonna tell you how to organize your pages.
+
+for example you're gonna create `page1`, go to `pages` folder and create a folder called `page1` and inside that create a file called `index.tsx`, when you do that, what's going to happen, is that your page contents are still accessible on your `domain.com/page1`, but now all the contents, all the relevant contents, in our case it would be just `.tsx` file and the `styles` file, would be available inside this `page1` only.
+
+page1 => { index.tsx, styles.module.scss }
 
 
 You will see an `index.js` file which is our `HomePage` 
