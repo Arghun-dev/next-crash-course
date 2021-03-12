@@ -216,8 +216,98 @@ and now if I return `status: 'ok'` from this endpoint, and then if I visit, `htt
 Yeah, that's how you're going to create a very simple api with `next.js`, it could have a lot of uses, for example if you're usng jwt authentication in `next.js` you can use an api endpoint, you can deploy these individual functions as lambda functions as well.
 
 
-## req and res Objects
+## Simple JWT Auth Example
 
+`$. npm install jsonwebtoken`
+
+`$. npm i @types/jsonwebtoken --save-dev`
+
+`pages/login/index.tsx`
+
+```js
+import { useState } from 'react'
+import jwt from 'jwt'
+
+export default function Login() {
+
+  const [username, setUserName] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [message, setMessage] = useState<string>('You are not logged in')
+
+  async function submitForm() {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    }).then((t) => t.json())
+    
+    const token = res.token
+    
+    if (token) {
+      const json = jwt.decode(token) as { [key: string]: string }
+      setMessage(`Welcome ${json.username} and you are ${json.admin ? 'an admin' : 'not an admin'}`)
+    } else {
+      setMessage('Something went wrong')
+    }
+  }
+
+  return (
+    <div>
+      <h1>{message}</h1>
+      <form>
+        <input 
+          type="text" 
+          name="username" 
+          value={username}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <br />
+        <input 
+          type="password" 
+          name="password" 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <input type="submit" value="Login" onClick={submitForm} />
+      </form>
+    </div>
+  )
+}
+```
+
+`pages/api/login.ts`
+
+```js
+import { NextApiRequest, NextApiResponse } from 'next'
+import jwt from 'jsonwebtoken'
+
+const KEY = 'asdahsdkjashdsadkjsahdkjhasd'
+
+export default function (req: NextApiRequest, res: NextApiResponse) {
+  if (!req.body) {
+    res.statusCode = 404
+    res.end('Error')
+    return
+  }
+  
+  const { username, password } = req.body
+  
+  res.json({
+    token: jwt.sign(
+      {
+        username,
+        admin: username === 'admin' && password === 'admin'
+      },
+      KEY
+    )
+  })
+}
+```
+
+so, this way we are just creating a signed json token which we are returning using an api.
 
 You will see an `index.js` file which is our `HomePage` 
 
