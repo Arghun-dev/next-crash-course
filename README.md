@@ -138,6 +138,16 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
+## CSS Modules
+
+in here, we're gonna exmplain how you can import and use component styles in your pages, for example you wanna create and import Nav.css to your `Nav.tsx` file, you should do this just like this, if you want your file to be available only to a particular component:
+
+you should add `module` to your css file. => `Nav.module.css`
+
+```js
+import styles from './Nav.module.css'
+```
+
 We can give our Next.js app global styles, inside `_app.tsx` file we can give global styles, we create a file `global.css` and import it inside, `_app.tsx` and use it.
 
 
