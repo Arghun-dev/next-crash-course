@@ -307,7 +307,8 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
 }
 ```
 
-so, this way we are just creating a signed json token which we are returning using an api.
+so, this way we are just creating a signed json token which we are returning using an api. 
+
 
 You will see an `index.js` file which is our `HomePage` 
 
