@@ -163,8 +163,57 @@ in here, I'm gonna tell you how to organize your pages.
 
 for example you're gonna create `page1`, go to `pages` folder and create a folder called `page1` and inside that create a file called `index.tsx`, when you do that, what's going to happen, is that your page contents are still accessible on your `domain.com/page1`, but now all the contents, all the relevant contents, in our case it would be just `.tsx` file and the `styles` file, would be available inside this `page1` only.
 
-page1 => { index.tsx, styles.module.scss }
+pages => page1 => { index.tsx, styles.module.scss }
 
+**index.tsx**
+
+```js
+import styles from './styles.module.scss'
+
+export default function Page1() {
+  return (
+    <h1 className={styles.red}>Heading</h1>
+  )
+}
+```
+
+**styles.module.scss**
+
+```js
+.red {
+  color: red;
+}
+```
+
+So, this is all we need, now we have a nice little page with us, which has the `view` and the `logic` and the `styles` part separated
+
+
+## API Section Introduction
+
+so, when you create the next app, you should have observed that we have `api` folder as well inside `pages` folder, so what it means? and why is that different?
+
+the `api` folder is special in the sense that the files you create, the typescript or javascript files you create in this folder, should not export a react component, what do I mean by that?
+
+`pages/api/random-number.ts`
+
+```js
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default function(req: NextApiRequest, res: NextApiResponse) {
+  // it should NOT be a react component
+  
+  res.json({ status: 'ok' })
+  or
+  res.json({ num: Math.floor(Math.random() * 10) })
+}
+```
+
+in this file we should not return a react component, because for react components we have `pages`. but for the files inside api folder, this is basically a rest api endpoint, which you can use to return, responses like `json response`, so what I'm gonna do, is I'm gonna get 2 parameters here, the first one is going to `NextApiRequest` type and the second one is `NextApiResponse` type.
+ And the thing you have to remember, is that you should export a singlr function from a single file. and this endpoint here => `random-number.ts` is automatically available => `http://localhost:3000/api/random-number`
+ 
+and now if I return `status: 'ok'` from this endpoint, and then if I visit, `http://localhost:3000/api/random-number` I will get the json status: ok or `random-numbers`
+
+Yeah, that's how you're going to create a very simple api with `next.js`, it could have a lot of uses, for example if you're usng jwt authentication in `next.js` you can use an api endpoint, you can deploy these individual functions as lambda functions as well.
 
 You will see an `index.js` file which is our `HomePage` 
 
