@@ -102,10 +102,11 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-## Style JSX
+## Styled JSX
 
 ```js
 const App = () => {
+  const variable = Math.random() > 5 ? 'red' : 'blue'
   return (
     <div>
       <h1 className='title'>Heading</h1>
@@ -114,6 +115,7 @@ const App = () => {
         {`
           .title {
             color: red;
+            background-color: ${variable}
           }
         `}
       </style>
