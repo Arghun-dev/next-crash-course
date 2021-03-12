@@ -124,6 +124,22 @@ const App = () => {
 }
 ```
 
+## Global Styles
+
+app.tsx
+
+```js
+import './global.css'
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp;
+```
+
+We can give our Next.js app global styles, inside `_app.tsx` file we can give global styles, we create a file `global.css` and import it inside, `_app.tsx` and use it.
+
 
 You will see an `index.js` file which is our `HomePage` 
 
