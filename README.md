@@ -102,6 +102,27 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
+## Style JSX
+
+```js
+const App = () => {
+  return (
+    <div>
+      <h1 className='title'>Heading</h1>
+      
+      <style jsx>
+        {`
+          .title {
+            color: red;
+          }
+        `}
+      </style>
+    </div>
+  )
+}
+```
+
+
 You will see an `index.js` file which is our `HomePage` 
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
