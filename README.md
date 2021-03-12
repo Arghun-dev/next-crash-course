@@ -215,6 +215,10 @@ and now if I return `status: 'ok'` from this endpoint, and then if I visit, `htt
 
 Yeah, that's how you're going to create a very simple api with `next.js`, it could have a lot of uses, for example if you're usng jwt authentication in `next.js` you can use an api endpoint, you can deploy these individual functions as lambda functions as well.
 
+
+## req and res Objects
+
+
 You will see an `index.js` file which is our `HomePage` 
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
