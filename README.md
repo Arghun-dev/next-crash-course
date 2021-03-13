@@ -321,6 +321,14 @@ import Link from 'next/link'
 ```
 
 
+## Nested Routing
+
+for example, I want to have a nested routing like this => `/mehul/activities`
+
+You should have folder structure like this, which `index.tsx` is the `/mehul` page and `activities.tsx` is the `/mehul/activities` route.
+
+`/mehul/activities![nestedRouting](https://user-images.githubusercontent.com/53907570/111020739-41ce9200-83dd-11eb-97d9-fe441d4c79a8.png)`
+
 so, this way we are just creating a signed json token which we are returning using an api. 
 
 
