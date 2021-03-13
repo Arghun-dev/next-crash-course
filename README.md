@@ -305,6 +305,7 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
   })
 }
 ```
+so, this way we are just creating a signed json token which we are returning using an api. 
 
 
 ## Link Component
@@ -329,7 +330,12 @@ You should have folder structure like this, which `index.tsx` is the `/mehul` pa
 ![nestedRouting](https://user-images.githubusercontent.com/53907570/111020817-b43f7200-83dd-11eb-8a4d-857caf18089d.png)
 
 
-so, this way we are just creating a signed json token which we are returning using an api. 
+## Dynamic Routing
+
+here, we can have dynamic routing based on folder structure inside pages folder.
+
+![DynamicRouting](https://user-images.githubusercontent.com/53907570/111022529-78f67080-83e8-11eb-9eb9-4033c099c253.png)
+
 
 
 You will see an `index.js` file which is our `HomePage` 
