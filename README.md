@@ -343,6 +343,10 @@ here, we can have dynamic routing based on folder structure inside pages folder.
 ![3SectionsRouting](https://user-images.githubusercontent.com/53907570/111022711-b27bab80-83e9-11eb-9110-ed6f11a6f008.png)
 
 
+## useRouter
+
+this `hook` is basically, is that you can use to programatically control navigation and access these parameters and stuff like that in Next.js.
+
 
 You will see an `index.js` file which is our `HomePage` 
 
