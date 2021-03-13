@@ -419,7 +419,7 @@ And now we have access to the `props` which we have returned from `getStaticProp
 import { GetStaticProps } from "next"
 
 // EXECUTION ON SERVER
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       myFavNum: 4
@@ -432,8 +432,59 @@ export default function Dynamic(props) {
 }
 ```
 
-for the most part what you have to remember is that you can see that `getStaticProps` is actually helping you to have dynamic content on your page 
+for the most part what you have to remember is that you can see that `getStaticProps` is actually helping you to have dynamic content on your page.
 
+```js
+
+import { GetStaticProps } from "next"
+
+// EXECUTION ON SERVER
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      revalidate: 10,
+      myFavNum: 4
+    }
+  }
+}
+
+export default function Dynamic(props) {
+  return <h1>Dynamic Number - {props.myFavNum}</h1>
+}
+```
+
+now, that I've added the `revalidate` prop to `props` object, things become interesting:
+
+**Now in 10 seconds if there's a request to the server, in every 10s, if there's a request to the server, `Next.js` is going to try, it's not saying that it would, it's going to try to recreate this page, based on updated data, by that what I mean, is that it's going to run the `getStaticProps` function on the server for this page and try to update the static file which it has for this particular page, and this only works on production, and `revalidate` is useless on the localhost**
+
+
+## getStaticProps revalidate parameter
+
+`revalidate` parameter of `getStaticProps` is extremely useful in `Next.js`
+
+`revalidate` allows you to do something amazing.
+
+when you `build` Next.js app and push it to `production` => it's going to create a `static` export of this particular page.
+
+
+## getStaticPaths
+
+another important function which workds closely with `getStaticProps` and that is `getStaticPaths`.
+
+```js
+import { GetStaticPaths } from 'next'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: false
+  }
+}
+```
+
+there are something we should learn, before we learn `getStaticPaths`, the first thing is that, whenever you implement `getStaticProps` inside a dynamic file, you have to implement this function anyway, `getStaticPaths`, `getStaticProps` would work fine on it's own, in a standalone page. If you have a `dynamic page`, you have to use `getStaticPaths`.
+
+`getStaticProps` runs at build time, it does not run at run time.
 
 You will see an `index.js` file which is our `HomePage` 
 
