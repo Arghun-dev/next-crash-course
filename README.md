@@ -34,7 +34,6 @@ so if you run `$. npm run dev`, you will see that, it says **We detected Typescr
 
 That was initialization of Next.js with typescript
 
-`------------------------------------------------------------------------------------------------------------------------------------`
 
 ## File Structure Explanation
 
