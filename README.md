@@ -374,6 +374,10 @@ so, yeah that's pretty much it for what you\re gonna need for `useRouter` that's
 
 **But I would day try to use `Link` as much as you can, because it's good for `SEO`, it's good for `accessibility`**
 
+
+## Catch all Routes
+
+
 You will see an `index.js` file which is our `HomePage` 
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
