@@ -387,6 +387,51 @@ export default function My404() {
 }
 ```
 
+## getStaticProps
+
+what this function really is, to exmplain this I'm gonna create a file called `dynamic.tsx`
+
+**dynamic.tsx**
+
+```js
+import { GetStaticProps } from "next"
+
+export const getStaticProps: GetStaticProps = async context => {
+  return {
+    props: {
+      myFavNum: 4
+    }
+  }
+}
+
+export default function Dynamic() {
+  return <h1>Dynamic</h1>
+}
+```
+
+**what `getStaticProps` does, is before your `Dynamic` function is executed, `Next.js` is going to execute `getStaticProps` in terms of `server`, so `getStaticProps` executes on `server` and `Dynamic` function is executed obviously on client as well as on server.**
+
+And now we have access to the `props` which we have returned from `getStaticProps` in `Dynamic` function.
+
+**Dynamic.tsx**
+
+```js
+import { GetStaticProps } from "next"
+
+// EXECUTION ON SERVER
+export const getStaticProps = async (context) => {
+  return {
+    props: {
+      myFavNum: 4
+    }
+  }
+}
+
+export default function Dynamic(props) {
+  return <h1>Dynamic Number - {props.myFavNum}</h1>
+}
+```
+
 
 You will see an `index.js` file which is our `HomePage` 
 
