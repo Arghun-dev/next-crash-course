@@ -375,7 +375,17 @@ so, yeah that's pretty much it for what you\re gonna need for `useRouter` that's
 **But I would day try to use `Link` as much as you can, because it's good for `SEO`, it's good for `accessibility`**
 
 
-## Catch all Routes
+## Custom 404 Page
+
+to create a specific different `404` page, all you have to do is just go ahead, and inside directory create a `404.tsx` file that is you know just `404`, now remember this is does not mean that you can create files for different status codes as well, this `404.tsx` or `404.js` whatever you are creating depending on your project structure, this file name is actually hard coded in `Next.js`, you can not create you know `405` for example.
+
+**404.tsx**
+
+```js
+export default function My404() {
+  return <h1>404</h1>
+}
+```
 
 
 You will see an `index.js` file which is our `HomePage` 
