@@ -469,7 +469,7 @@ when you `build` Next.js app and push it to `production` => it's going to create
 
 ## getStaticPaths
 
-another important function which workds closely with `getStaticProps` and that is `getStaticPaths`.
+another important function which works closely with `getStaticProps` and that is `getStaticPaths`.
 
 ```js
 import { GetStaticPaths } from 'next'
