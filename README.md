@@ -307,6 +307,20 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
 }
 ```
 
+
+## Link Component
+
+for example you have a page, and you wanna have a link, when you want to click it, you will redirect to that page.
+
+```js
+import Link from 'next/link'
+
+<Link href='/page1'>
+  Page1
+</Link>
+```
+
+
 so, this way we are just creating a signed json token which we are returning using an api. 
 
 
