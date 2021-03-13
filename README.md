@@ -432,6 +432,8 @@ export default function Dynamic(props) {
 }
 ```
 
+for the most part what you have to remember is that you can see that `getStaticProps` is actually helping you to have dynamic content on your page 
+
 
 You will see an `index.js` file which is our `HomePage` 
 
