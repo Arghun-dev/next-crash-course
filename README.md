@@ -345,8 +345,34 @@ here, we can have dynamic routing based on folder structure inside pages folder.
 
 ## useRouter
 
+```js
+import { useRouter } from 'next/router'
+
+export default function FruitName() {
+  const router = useRouter()
+  
+  function takeMeHome() {
+    router.push('/')
+  }
+  
+  return (
+    <h1>
+      Hello {router.query.name} {router.query.subname}
+      <button onClick={takeMeHome}>Home</button>
+    </h1>
+  )
+}
+```
+
 this `hook` is basically, is that you can use to programatically control navigation and access these parameters and stuff like that in Next.js.
 
+![3SectionsRouting](https://user-images.githubusercontent.com/53907570/111022711-b27bab80-83e9-11eb-9110-ed6f11a6f008.png)
+
+`Next.js` is going to make the query object empty, if you do not have any prefetching conditions.    
+
+so, yeah that's pretty much it for what you\re gonna need for `useRouter` that's all you're gonna need for the most part the `router.query` and dynamic pushing of the `routes` 
+
+**But I would day try to use `Link` as much as you can, because it's good for `SEO`, it's good for `accessibility`**
 
 You will see an `index.js` file which is our `HomePage` 
 
