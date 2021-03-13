@@ -334,7 +334,13 @@ You should have folder structure like this, which `index.tsx` is the `/mehul` pa
 
 here, we can have dynamic routing based on folder structure inside pages folder.
 
+2 sections routing:
+
 ![DynamicRouting](https://user-images.githubusercontent.com/53907570/111022529-78f67080-83e8-11eb-9eb9-4033c099c253.png)
+
+3 sections routing:
+
+![3SectionsRouting](https://user-images.githubusercontent.com/53907570/111022711-b27bab80-83e9-11eb-9110-ed6f11a6f008.png)
 
 
 
