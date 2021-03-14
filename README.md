@@ -486,6 +486,32 @@ there are something we should learn, before we learn `getStaticPaths`, the first
 
 `getStaticProps` runs at build time, it does not run at run time.
 
+
+## getServerSideProps
+
+```js
+import { GetServerSideProps } from 'next'
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {
+      myFavNum: Math.random()
+    }
+  }
+}
+
+export default function Dynamic(props) {
+  return (
+    <h1>{props.myFavNum}</h1>
+  )
+}
+```
+
+The thing is really matter here, is that `getServerSideProps` you know if you can go ahead and make your code not use `serverSideProps` that is better, the reason for this, is that `getServerSideProps` is called always on every page request even on production. So just like we saw, that Next.js could actually could create static bundles out of these files, 
+
+when you use `getServerSideProps` you're calling a node server on every request that means you get no caching benefits, that means your request would be slower to the clients, because it has to go all the way back to server to be executed
+
+
 You will see an `index.js` file which is our `HomePage` 
 
 And you will see a `styles` folder which includes your styles. If you're gonna define styles for your components you should do this just like below:
