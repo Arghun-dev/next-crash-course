@@ -8,21 +8,7 @@ export default function BitcoinPrice({ data }) {
         <title>BitPrice</title>
       </Head>
       <h1>BitcoinPrice</h1>
-      <Price 
-        code={data.bpi.EUR.code} 
-        rate={data.bpi.EUR.rate} 
-        description={data.bpi.EUR.description}     
-      />
-      <Price 
-        code={data.bpi.GBP.code} 
-        rate={data.bpi.GBP.rate} 
-        description={data.bpi.GBP.description}   
-      />
-      <Price 
-        code={data.bpi.USD.code} 
-        rate={data.bpi.USD.rate} 
-        description={data.bpi.USD.description} 
-      />
+      <Price data={data} />
     </div>
   ) 
 }
