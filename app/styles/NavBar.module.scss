@@ -1,0 +1,19 @@
+.nav {
+  background-color: rgba(0,0,0, 0.8);
+  .list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+
+    .listItem {
+      color: white;
+      margin-right: 1.5rem;
+      padding: .5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(256, 256, 256, 0.3);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.price {
+  border: 1px solid #c7c7c7;
+  background-color: #c7c7c7;
+  padding: 1rem;
+  border-radius: .2rem;
+  box-shadow: 2px 4px 6px #ccc;
+  margin-bottom: 1rem;
+
+  &_code {
+    font-weight: bold;
+    margin-right: .5rem;
+  }
+
+  &_rate {
+    color: white;
+    margin-right: .5rem;
+    font-weight: bold;
+  }
+
+  &_description { 
+    color: #eee;
+  }
+}

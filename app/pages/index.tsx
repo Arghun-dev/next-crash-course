@@ -1,8 +1,8 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ articles }) {
-  console.log('articles', articles)
   return (
     <div className={styles.container}>
       <Head>
